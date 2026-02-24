@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Safety Vest Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .dashboard-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .alert { color: white; background-color: #e74c3c; padding: 10px; border-radius: 5px; display: none; margin-bottom: 20px;}
+        h2 { margin-top: 0; font-size: 1.2rem; color: #333; }
+        .data-value { font-size: 2rem; font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <h1>Construction Site Safety Monitor</h1>
+    <div id="fallAlert" class="alert">⚠️ EMERGENCY: Worker Fall Detected!</div>
+
+    <div class="dashboard-container">
+        <div class="card">
+            <h2>Worker Location (RFID)</h2>
+            <div class="data-value" id="locationData">Zone A</div>
+        </div>
+        <div class="card">
+            <h2>Temperature (DHT22)</h2>
+            <div class="data-value" id="tempData">-- °C</div>
+        </div>
+        <div class="card">
+            <h2>Gas Level (MQ-135)</h2>
+            <div class="data-value" id="gasData">Normal</div>
+        </div>
+    </div>
+
+    <script>
+        // You will add Firebase fetching logic here later
+        console.log("Dashboard initialized. Ready for Firebase integration.");
+    </script>
+</body>
+</html>
