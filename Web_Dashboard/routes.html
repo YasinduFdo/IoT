@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BusPass - Routes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color: #ffffff; font-family: system-ui, -apple-system, sans-serif; color: #000000; display: flex; flex-direction: column; min-height: 100vh; }
+        .navbar { padding: 1rem 2rem; border-bottom: 1px solid #e5e5e5; }
+        .navbar-brand { font-weight: 800; font-size: 1.5rem; color: #000000 !important; letter-spacing: -0.5px; }
+        .nav-link { color: #666666 !important; font-weight: 500; margin: 0 10px; transition: color 0.2s; }
+        .nav-link:hover, .nav-link.active { color: #000000 !important; font-weight: 700; }
+        .btn-dark-custom { background-color: #000000; color: #ffffff; border-radius: 6px; padding: 0.5rem 1.5rem; font-weight: 600; border: none; transition: background-color 0.2s; }
+        .btn-dark-custom:hover { background-color: #333333; color: #ffffff; }
+        
+        .content-section { padding: 5rem 0; flex: 1; }
+        .page-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -1px; text-align: center; }
+        .page-subtitle { font-size: 1.15rem; color: #666666; max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6; text-align: center; }
+        
+        .table-custom { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e5e5e5; }
+        .table-custom th { background-color: #f8f9fa; border-top: none; border-bottom: 2px solid #e5e5e5; font-weight: 700; color: #333; padding: 1rem; }
+        .table-custom td { padding: 1.25rem 1rem; vertical-align: middle; border-top: 1px solid #e5e5e5; color: #666; }
+        .status-live { background: #d4edda; color: #155724; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        .status-idle { background: #e2e3e5; color: #383d41; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+        .footer { background-color: #fafafa; border-top: 1px solid #e5e5e5; padding: 4rem 0 2rem 0; margin-top: auto; }
+        .footer-heading { font-weight: 700; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .footer-link { display: block; color: #666666; margin-bottom: 0.75rem; text-decoration: none; font-size: 0.95rem; }
+        .footer-link:hover { color: #000000; text-decoration: none; }
+        .footer-bottom { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e5e5; color: #999999; font-size: 0.85rem; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand" href="index.html">BusPass.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="routes.html">Routes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block">
+                <a href="register.html" class="btn btn-dark-custom">Admin Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-section container">
+        <h1 class="page-title">Active Routes</h1>
+        <p class="page-subtitle">Check the current operating status and schedules for all buses connected to the smart transit grid.</p>
+        
+        <div class="table-responsive table-custom mt-4">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th>Vehicle ID</th>
+                        <th>Route Name</th>
+                        <th>Start Point</th>
+                        <th>End Point</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong class="text-dark">BUS-01</strong></td>
+                        <td>NIBM Campus Shuttle</td>
+                        <td>Colombo Fort</td>
+                        <td>NIBM Campus</td>
+                        <td><span class="status-live">Tracking Live</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong class="text-dark">BUS-02</strong></td>
+                        <td>City Circular Loop</td>
+                        <td>Bambalapitiya</td>
+                        <td>Bambalapitiya</td>
+                        <td><span class="status-idle">At Depot</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong class="text-dark">BUS-03</strong></td>
+                        <td>Express Line</td>
+                        <td>Maharagama</td>
+                        <td>Pettah</td>
+                        <td><span class="status-idle">Maintenance</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="navbar-brand mb-3">BusPass.</h5>
+                    <p class="text-muted pr-4" style="font-size: 0.95rem; line-height: 1.6;">Modernizing public transit with real-time tracking, secure RFID ticketing, and seamless dashboard integration.</p>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Platform</h6>
+                    <a href="index.html" class="footer-link">Live Map</a>
+                    <a href="routes.html" class="footer-link">Schedules</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="about.html" class="footer-link">About Us</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Support</h6>
+                    <a href="feedback.html" class="footer-link">Provide Feedback</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Legal</h6>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 BusPass Smart Transit Systems. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
