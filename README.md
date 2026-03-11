@@ -1,4 +1,4 @@
-<h1>IOT</h1>
+# IOT
 <div align="center">
 
   <!-- Classic Header -->
@@ -65,12 +65,12 @@ To maintain a clean and classic organization, the project is structured as follo
   </thead>
   <tbody>
     <tr>
-      <td><code>&#128193; 3d unit/</code></td>
-      <td>3D models and integrated units for the hardware enclosure.</td>
+      <td><code>&#128196; 3d unit</code></td>
+      <td>3D model archive/unit for the hardware enclosure.</td>
     </tr>
     <tr>
       <td><code>&#128193; IOT-Transport/</code></td>
-      <td>Data transmission and network protocol logic.</td>
+      <td>Data transmission and network protocol logic (includes RFID, GPS, and WiFi logic).</td>
     </tr>
     <tr>
       <td><code>&#128193; Sensor_Modules/</code></td>
@@ -78,10 +78,10 @@ To maintain a clean and classic organization, the project is structured as follo
     </tr>
     <tr>
       <td><code>&#128193; Web_Dashboard/</code></td>
-      <td>HTML frontend code for the user interface.</td>
+      <td>HTML frontend code for the user interface (Login, Dashboard, Routes).</td>
     </tr>
     <tr>
-      <td><code>&#128196; IOT proposal.docx</code></td>
+      <td><code>&#128196; IOT proposal (1).docx</code></td>
       <td>Detailed project proposal and formal documentation.</td>
     </tr>
   </tbody>
@@ -101,27 +101,3 @@ Ensure you have the following classic toolsets installed:
 1. **Obtain the Source Code**
    ```sh
    git clone https://github.com/YasinduFdo/IoT.git
-   ```
-
-2. **Launch the Dashboard**
-   Navigate to the `Web_Dashboard` directory and open the primary `.html` file in your preferred web browser to view the interface.
-
-3. **Configure Hardware**
-   Access the C++ scripts located in `Sensor_Modules`. Update your network credentials within the code, and flash the software to your respective microcontrollers.
-
-<br />
-
----
-
-<div align="center">
-
-### &#10045; Team Members
-
-<p>
- M .L.D Dananjay<br />
- W.Y.D Frenando<br />
- I.V.N.S Ilukpitiya<br />
- W.W.N.T Frenando
-</p>
-
-</div>
