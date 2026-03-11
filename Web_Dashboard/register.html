@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BusPass - Admin Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Navbar matches index */
+        .navbar {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #000000 !important;
+            letter-spacing: -0.5px;
+        }
+        .nav-link {
+            color: #666666 !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: #000000 !important;
+            font-weight: 700;
+        }
+        .btn-outline-custom {
+            background-color: transparent;
+            color: #000000;
+            border: 1px solid #000000;
+            border-radius: 6px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-outline-custom:hover {
+            background-color: #f8f9fa;
+            color: #000000;
+            text-decoration: none;
+        }
+        .btn-dark-custom {
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border: none;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        .btn-dark-custom:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .content-wrapper {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+        .form-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        .form-subtitle {
+            color: #666666;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        .form-control {
+            background-color: #f8f9fa;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .form-control:focus {
+            border-color: #000;
+            box-shadow: none;
+        }
+        #form-content { display: none; }
+        
+        /* Footer matches index */
+        .footer {
+            background-color: #fafafa;
+            border-top: 1px solid #e5e5e5;
+            padding: 4rem 0 2rem 0;
+            margin-top: auto;
+        }
+        .footer-heading { font-weight: 700; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .footer-link { display: block; color: #666666; margin-bottom: 0.75rem; text-decoration: none; font-size: 0.95rem; }
+        .footer-link:hover { color: #000000; text-decoration: none; }
+        .footer-bottom { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e5e5; color: #999999; font-size: 0.85rem; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand" href="index.html">BusPass.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Routes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block">
+                <a href="index.html" class="btn btn-outline-custom">Back to Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="form-container" id="login-content">
+            <h1 class="form-title">Admin Access</h1>
+            <p class="form-subtitle">Enter credentials to register new cards</p>
+            
+            <input type="text" id="admin-user" class="form-control" placeholder="Username">
+            <input type="password" id="admin-pass" class="form-control" placeholder="Password">
+            
+            <button id="btn-login" class="btn btn-dark-custom mb-3">Sign In</button>
+        </div>
+
+        <div class="form-container" id="form-content">
+            <h1 class="form-title">Register Card</h1>
+            <p class="form-subtitle">Add a new passenger to the database</p>
+            
+            <form id="reg-form">
+                <input type="text" id="rfid" class="form-control" placeholder="RFID Card UID (e.g. 40ED0061)" required>
+                <input type="text" id="name" class="form-control" placeholder="Passenger Full Name" required>
+                <input type="number" id="age" class="form-control" placeholder="Age" required>
+                <input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
+                
+                <button type="submit" class="btn btn-dark-custom mb-3">Add to Database</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="navbar-brand mb-3">BusPass.</h5>
+                    <p class="text-muted pr-4" style="font-size: 0.95rem; line-height: 1.6;">
+                        Modernizing public transit with real-time tracking, secure RFID ticketing, and seamless dashboard integration.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Platform</h6>
+                    <a href="#" class="footer-link">Live Map</a>
+                    <a href="#" class="footer-link">Schedules</a>
+                    <a href="#" class="footer-link">Card Top-up</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Company</h6>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">News</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Support</h6>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Provide Feedback</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h6 class="footer-heading">Legal</h6>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 BusPass Smart Transit Systems. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyApEIhe1inDAWGLUZgheUkhw1Cg0dbwp-k",
+            authDomain: "bus-project-3f559.firebaseapp.com",
+            databaseURL: "https://bus-project-3f559-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "bus-project-3f559",
+            appId: "1:859994996863:web:348d15dbcf838e17a6ff4a"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        document.getElementById('btn-login').onclick = function() {
+            const user = document.getElementById('admin-user').value;
+            const pass = document.getElementById('admin-pass').value;
+            
+            if(user === 'admin' && pass === 'admin123') {
+                document.getElementById('login-content').style.display = 'none';
+                document.getElementById('form-content').style.display = 'block';
+            } else {
+                alert('Access Denied!');
+            }
+        };
+
+        document.getElementById('reg-form').onsubmit = function(e) {
+            e.preventDefault();
+            const cardID = document.getElementById('rfid').value.toUpperCase().trim();
+            
+            set(ref(database, 'rfid-cards/' + cardID), {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                phone: document.getElementById('phone').value,
+                registeredAt: Date.now()
+            }).then(function() {
+                alert('Card UID ' + cardID + ' successfully registered!');
+                document.getElementById('reg-form').reset();
+            }).catch(function(err) {
+                alert('Error: ' + err);
+            });
+        };
+    </script>
+</body>
+</html>
